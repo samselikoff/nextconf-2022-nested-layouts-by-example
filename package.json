@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^12.3.2-canary.22",
+    "react": "^0.0.0-experimental-5d60a0b84-20221006",
+    "react-dom": "^0.0.0-experimental-5d60a0b84-20221006"
+  },
+  "devDependencies": {
+    "eslint": "8.24.0",
+    "eslint-config-next": "12.3.1",
+    "prettier": "2.7.1"
+  }
+}
