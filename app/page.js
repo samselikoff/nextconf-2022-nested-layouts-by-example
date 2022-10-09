@@ -1,3 +1,3 @@
 export default function Page() {
-  return <p>Hello, Next.js 13!</p>;
+  return <p className="text-lg">Welcome! Choose a movie.</p>;
 }
