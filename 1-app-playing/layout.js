@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -5,7 +7,12 @@ export default function RootLayout({ children }) {
         <title>Next.js</title>
       </head>
 
-      <body>{children}</body>
+      <body>
+        <p>
+          <Link href="/">Build UI</Link>
+        </p>
+        {children}
+      </body>
     </html>
   );
 }
