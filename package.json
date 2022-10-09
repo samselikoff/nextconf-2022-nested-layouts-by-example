@@ -6,6 +6,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "^7.5.3",
     "next": "^12.3.2-canary.22",
     "react": "^0.0.0-experimental-5d60a0b84-20221006",
     "react-dom": "^0.0.0-experimental-5d60a0b84-20221006"

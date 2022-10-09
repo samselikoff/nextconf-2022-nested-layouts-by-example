@@ -1,3 +1,3 @@
 export default function FooPage() {
-  return <p>Foo page</p>;
+  return <p>Foo.. page</p>;
 }
