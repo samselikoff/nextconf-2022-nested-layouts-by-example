@@ -13,6 +13,11 @@ export default function Layout({ children }) {
   return (
     <div className="flex">
       <nav className="p-4 border-r w-1/3">
+        <p>
+          <Link href="/">
+            <a className="text-sm text-gray-500">← Back home</a>
+          </Link>
+        </p>
         <p className="text-2xl">
           <Link href="/movies">Movies</Link>
         </p>
@@ -27,7 +32,7 @@ export default function Layout({ children }) {
         </div>
       </nav>
 
-      <main className="w-2/3">{children}</main>
+      <main className="w-2/3 p-8">{children}</main>
     </div>
   );
 }
