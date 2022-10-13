@@ -4,7 +4,7 @@ import { experimental_use as use } from "react";
 async function getMovie(id) {
   let res = await fetch(`http://localhost:3001/movies/${id}`);
 
-  return await res.json();
+  return res.json();
 }
 
 export default function Layout({ params, children }) {

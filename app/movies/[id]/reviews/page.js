@@ -2,8 +2,8 @@ import { experimental_use as use } from "react";
 
 async function getReviews(id) {
   let res = await fetch(`http://localhost:3001/movies/${id}/ratings`, {
-    cache: "no-store",
-    revalidate: 0,
+    // cache: "no-store",
+    // revalidate: 0,
   });
 
   return res.json();

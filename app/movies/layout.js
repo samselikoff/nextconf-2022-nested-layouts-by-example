@@ -4,10 +4,10 @@ import MovieLink from "./movie-link";
 
 async function getMovies() {
   let res = await fetch("http://localhost:3001/movies", {
-    cache: "force-cache",
+    // cache: "force-cache",
   });
 
-  return await res.json();
+  return res.json();
 }
 
 export default function Layout({ children }) {

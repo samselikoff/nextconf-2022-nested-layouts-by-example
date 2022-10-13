@@ -3,7 +3,7 @@ import { experimental_use as use } from "react";
 async function getCast(movieId) {
   let res = await fetch(`http://localhost:3001/movies/${movieId}/cast`);
 
-  return await res.json();
+  return res.json();
 }
 
 export default function Page({ params }) {
