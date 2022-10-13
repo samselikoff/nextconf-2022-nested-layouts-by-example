@@ -1,10 +1,14 @@
-"client";
-
+import { experimental_use as use } from "react";
 import Link from "next/link";
-import { useSelectedLayoutSegment } from "next/dist/client/components/hooks-client";
+
+async function getMovies() {
+  let res = await fetch("http://localhost:3001/movies");
+
+  return await res.json();
+}
 
 export default function Layout({ children }) {
-  let id = useSelectedLayoutSegment();
+  let movies = use(getMovies());
 
   return (
     <div className="flex">
@@ -13,24 +17,13 @@ export default function Layout({ children }) {
           <Link href="/movies">Movies</Link>
         </p>
         <div className="mt-6">
-          <Link softPush href="/movies/1">
-            <a
-              className={`${
-                id === "1" ? "underline" : ""
-              } block hover:text-blue-500`}
-            >
-              Star Wars
-            </a>
-          </Link>
-          <Link softPush href="/movies/2">
-            <a
-              className={`${
-                id === "2" ? "underline" : ""
-              } block hover:text-blue-500`}
-            >
-              The Lord of the Rings
-            </a>
-          </Link>
+          {movies.map((movie) => (
+            <div key={movie.id}>
+              <Link href={`/movies/${movie.id}`}>
+                <a>{movie.title}</a>
+              </Link>
+            </div>
+          ))}
         </div>
       </nav>
 

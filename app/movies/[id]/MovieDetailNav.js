@@ -1,7 +1,7 @@
-"client";
+"use client";
 
 import Link from "next/link";
-import { useSelectedLayoutSegment } from "next/dist/client/components/hooks-client";
+import { useSelectedLayoutSegment } from "next/navigation";
 
 export default function MovieDetailNav({ movieId }) {
   let selectedTab = useSelectedLayoutSegment();
