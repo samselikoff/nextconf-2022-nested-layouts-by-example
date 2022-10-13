@@ -4,7 +4,7 @@ import MovieDetailNav from "./MovieDetailNav";
 async function getMovie(id) {
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  return { id };
+  return { id, year: 2020 };
 }
 
 export default function Page({ children, params }) {
@@ -12,7 +12,10 @@ export default function Page({ children, params }) {
 
   return (
     <div className="w-full">
-      <p className="p-4 text-xl">Movie {movie.id}</p>
+      <div className="p-4">
+        <p className="text-xl">Movie {movie.id}</p>
+        <p>Year: {movie.year}</p>
+      </div>
 
       <MovieDetailNav movieId={params.id} />
 

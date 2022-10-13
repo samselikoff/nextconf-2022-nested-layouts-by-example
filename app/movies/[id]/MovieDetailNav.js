@@ -14,7 +14,7 @@ export default function MovieDetailNav({ movieId }) {
             selectedTab === "" ? "border-rose-500" : "border-transparent"
           } -mb-px text-sm font-medium pb-4 border-b-2`}
         >
-          Overview
+          Plot
         </a>
       </Link>
       <Link href={`/movies/${movieId}/cast`}>
