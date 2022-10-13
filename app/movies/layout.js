@@ -1,5 +1,6 @@
 import { experimental_use as use } from "react";
 import Link from "next/link";
+import MovieLink from "./movie-link";
 
 async function getMovies() {
   let res = await fetch("http://localhost:3001/movies");
@@ -24,9 +25,7 @@ export default function Layout({ children }) {
         <div className="mt-6">
           {movies.map((movie) => (
             <div key={movie.id}>
-              <Link href={`/movies/${movie.id}`}>
-                <a>{movie.title}</a>
-              </Link>
+              <MovieLink movieId={movie.id}>{movie.title}</MovieLink>
             </div>
           ))}
         </div>

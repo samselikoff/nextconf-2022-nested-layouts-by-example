@@ -1,9 +1,8 @@
 import "tailwindcss/tailwind.css";
 
 export default function RootLayout({ children }) {
-  // console.log({ children });
   return (
-    <html lang="en">
+    <html lang="en" className="text-gray-900">
       <head>
         <title>Next.js</title>
       </head>
