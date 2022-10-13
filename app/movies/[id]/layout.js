@@ -14,18 +14,30 @@ export default function Layout({ params, children }) {
   return (
     <div>
       <h1 className="text-3xl">{movie.title}</h1>
-      <p>Year: {movie.year}</p>
+      <p className="mt-2">Year: {movie.year}</p>
+      <p className="mt-2">{movie.overview}</p>
 
       <nav className="flex mt-4 border-b space-x-4">
         <Link href={`/movies/${id}`}>
-          <a className="text-sm py-2">Overview</a>
-        </Link>
-        <Link href={`/movies/${id}/cast`}>
           <a className="text-sm py-2">Cast</a>
+        </Link>
+        <Link href={`/movies/${id}/reviews`}>
+          <a className="text-sm py-2">Reviews</a>
         </Link>
       </nav>
 
       {children}
     </div>
   );
+}
+
+export async function generateStaticParams() {
+  let res = await fetch("http://localhost:3001/movies", {
+    cache: "force-cache",
+  });
+  let movies = await res.json();
+
+  return movies.map((movie) => ({
+    id: movie.id,
+  }));
 }

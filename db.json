@@ -12,5 +12,10 @@
     { "id": "1", "name": "Elijah Wood", "movieId": "1" },
     { "id": "2", "name": "Ian McKellen", "movieId": "1" },
     { "id": "3", "name": "Orlando Bloom", "movieId": "1" }
+  ],
+  "ratings": [
+    { "id": "1", "text": "It was awesome.", "author": "Sam", "movieId": "1" },
+    { "id": "2", "text": "It sucked.", "author": "Ryan", "movieId": "1" },
+    { "id": "3", "text": "It was ok", "author": "Poop", "movieId": "1" }
   ]
 }

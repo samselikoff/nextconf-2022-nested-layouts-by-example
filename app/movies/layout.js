@@ -3,7 +3,9 @@ import Link from "next/link";
 import MovieLink from "./movie-link";
 
 async function getMovies() {
-  let res = await fetch("http://localhost:3001/movies");
+  let res = await fetch("http://localhost:3001/movies", {
+    cache: "force-cache",
+  });
 
   return await res.json();
 }
