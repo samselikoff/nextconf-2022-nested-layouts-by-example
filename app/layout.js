@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "tailwindcss/tailwind.css";
 
 export default function RootLayout({ children }) {
@@ -7,7 +8,14 @@ export default function RootLayout({ children }) {
         <title>Next.js</title>
       </head>
 
-      <body>{children}</body>
+      <body className="p-8">
+        <nav className="text-sm border space-x-4">
+          <Link href="/images/1">Image 1</Link>
+          <Link href="/images/2">Image 2</Link>
+        </nav>
+
+        <div className="mt-4">{children}</div>
+      </body>
     </html>
   );
 }
