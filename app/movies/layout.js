@@ -1,7 +1,6 @@
 import { experimental_use as use } from "react";
 import Link from "next/link";
 import MovieLink from "./movie-link";
-// import AnimatedOutlet from "./animated-outlet";
 
 async function getMovies() {
   let res = await fetch("http://localhost:3001/movies");
