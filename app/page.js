@@ -1,7 +1,7 @@
 export default function Page() {
   return (
-    <div>
-      <p className="text-lg">Choose a movie.</p>
+    <div className="p-4">
+      <p className="text-lg">Welcome!</p>
     </div>
   );
 }

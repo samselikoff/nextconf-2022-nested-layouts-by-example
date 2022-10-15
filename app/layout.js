@@ -1,40 +1,22 @@
 import "tailwindcss/tailwind.css";
-import { experimental_use as use } from "react";
-import Link from "next/link";
-import MovieLink from "./movie-link";
-
-async function getMovies() {
-  let res = await fetch("http://localhost:3001/movies");
-
-  return res.json();
-}
+import NavLink from "./nav-link";
 
 export default function RootLayout({ children }) {
-  let movies = use(getMovies());
-
   return (
     <html lang="en" className="text-gray-900">
       <head>
         <title>Next.js</title>
       </head>
 
-      <body>
-        <div className="flex">
-          <nav className="p-4 border-r w-1/3">
-            <p className="text-2xl">
-              <Link href="/movies">Movies</Link>
-            </p>
-            <div className="mt-6">
-              {movies.map((movie) => (
-                <div key={movie.id}>
-                  <MovieLink movieId={movie.id}>{movie.title}</MovieLink>
-                </div>
-              ))}
-            </div>
-          </nav>
+      <body className="flex flex-col min-h-screen">
+        <header className="border-b border-gray-300">
+          <div className="p-4 space-x-2">
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/movies">Movies</NavLink>
+          </div>
+        </header>
 
-          <main className="w-2/3 p-8">{children}</main>
-        </div>
+        <main className="flex-1">{children}</main>
       </body>
     </html>
   );
