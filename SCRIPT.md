@@ -1,5 +1,20 @@
 # Talk
 
+Hello world of Next 13!
+
+# Step
+
+Let's add tailwind:
+
+```js
+// layout.js
+import "tailwindcss/tailwind.css";
+```
+
+No more \_app or \_document!
+
+---
+
 Start with app/layout.js, app/page.js. Explain.
 
 List movies. Do it in layout.js.
