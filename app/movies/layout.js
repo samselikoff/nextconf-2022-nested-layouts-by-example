@@ -25,3 +25,12 @@ export default function Layout({ children }) {
     </div>
   );
 }
+
+export async function generateStaticParams() {
+  let res = await fetch("http://localhost:3001/movies");
+  let movies = await res.json();
+
+  return movies.map((movie) => ({
+    id: movie.id,
+  }));
+}

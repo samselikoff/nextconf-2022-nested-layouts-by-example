@@ -328,3 +328,26 @@ And look at that. We've got the root layout rendering the movies layout renderin
 Pretty cool!
 
 ## Step
+
+Now this whole time we've been building you might be wondering about features from the current version of Next like getStaticProps and ISR – some of next's killer features that make the static parts of our sites super fast.
+
+Well let's come down to our terminal here, start api, run a build. Instant, movies loaded, API server is silent. Pretty amazing because we wrote this layout code right here with fetch! Right in our component. But because of RSC and suspense, Next can actually render these components at build time and wait for them to unsuspend, before completing the build. So we're getting the equivalent behavior of getStaticProps here, but we're able to just write React components using RSC and the `use` hook.
+
+Now if we click on a movie, we're going to see we're still fetching this data here. And this is becuase of the dynamic segment. Now in Next 12 we had the `getStaticPaths` API that we could use if we wanted to pregenerate these pages at build time.
+
+In Next 13 we have a similar api, called `generateStaticParams`. So if we come to the layout for this dynamic segment
+
+```js
+export async function generateStaticParams() {
+  let res = await fetch("http://localhost:3001/movies");
+  let movies = await res.json();
+
+  return movies.map((movie) => ({
+    id: movie.id,
+  }));
+}
+```
+
+Similar to paths but only concerned with the current dynamic segment. So we can fetch our movies and return an array of movie ids that we want to pregenerate. Rebuild, boom.
+
+Beyond scope of talk but there's way more options for configuring these fetch calls, ways to signal to Next how each one should be cached, whether it should be run at build time or revalidated every 10 seconds or via a webhook using ISR, but regardless very exciting how we basically have just one way to do fetch data, using fetch in a RSC, and then we can mix and match these options to get a fast site or real-time data.
