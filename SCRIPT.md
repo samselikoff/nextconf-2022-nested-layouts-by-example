@@ -275,6 +275,56 @@ return (
 );
 ```
 
-##
+And lets see how deep the nesting rabbit hole goes by adding another chunk of UI here to show the cast or the reviews for the movie.
 
-previously data loaded at top flows through. here you get to load the data within each section that needs it.
+```jsx
+<nav className="flex mt-4 border-b space-x-4">
+  <p className="text-sm py-2">Cast</p>
+  <p className="text-sm py-2">Reviews</p>
+</nav>
+```
+
+You know the drill – let's turn this page into a layout, grab the `children` and render them right here. And let's go ahead and make a page for the cast members. I can fetch the cast members for a movie via `http://localhost:3001/movies/1/cast`, so let's fetch some data
+
+```js
+import { experimental_use as use } from "react";
+
+async function getCast(movieId) {
+  let res = await fetch(`http://localhost:3001/movies/${movieId}/cast`);
+
+  return res.json();
+}
+
+export default function Page({ params }) {
+  let members = use(getCast(params.id));
+
+  return (
+    <div className="mt-4">
+      <ul className="list-disc pl-4">
+        {members.map((member) => (
+          <li key={member.id}>{member.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+Now, let's turn these into links:
+
+```jsx
+<Link href={`/movies/${params.id}`} className="text-sm py-2">
+  Cast
+</Link>
+<Link href={`/movies/${params.id}/reviews`} className="text-sm py-2">
+  Reviews
+</Link>
+```
+
+and build the reviews page. And finally the reviews page. Copy from Cast.
+
+And look at that. We've got the root layout rendering the movies layout rendering the movies/[id] layout, which renders either the cast or reviews page. And each segment – each layout or page – is loading the data that it needs, right here alongside of it. So this makes for a super easy way to break up our UI, we don't need to go up to the top of the route and keep tweaking a single loading hook like getServerSideProps in Next 12, to make sure it gets data for these nested segments, and then flow that data down. We can co-locate all the data fetching with each segment that needs it.
+
+Pretty cool!
+
+## Step

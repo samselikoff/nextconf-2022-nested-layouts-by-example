@@ -1,7 +1,7 @@
 import { experimental_use as use } from "react";
 
 async function getReviews(id) {
-  let res = await fetch(`http://localhost:3001/movies/${id}/ratings`);
+  let res = await fetch(`http://localhost:3001/movies/${id}/reviews`);
 
   return res.json();
 }

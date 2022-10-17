@@ -4,7 +4,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "api": "json-server --watch db.json --port 3001 -d 1500"
+    "api": "json-server --watch db.json --port 3001"
   },
   "dependencies": {
     "framer-motion": "^7.5.3",

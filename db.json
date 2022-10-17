@@ -6,16 +6,35 @@
       "year": 2001,
       "description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron."
     },
-    { "id": "2", "title": "Star Wars", "year": 1985 }
+    {
+      "id": "2",
+      "title": "Star Wars",
+      "year": 1977,
+      "description": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader."
+    }
   ],
   "cast": [
     { "id": "1", "name": "Elijah Wood", "movieId": "1" },
     { "id": "2", "name": "Ian McKellen", "movieId": "1" },
-    { "id": "3", "name": "Orlando Bloom", "movieId": "1" }
+    { "id": "3", "name": "Orlando Bloom", "movieId": "1" },
+    { "id": "4", "name": "Mark Hamill", "movieId": "2" },
+    { "id": "5", "name": "Harrison Ford", "movieId": "2" },
+    { "id": "6", "name": "Carrie Fisher", "movieId": "2" }
   ],
-  "ratings": [
+  "reviews": [
     { "id": "1", "text": "It was awesome.", "author": "Sam", "movieId": "1" },
-    { "id": "2", "text": "It sucked.", "author": "Ryan", "movieId": "1" },
-    { "id": "3", "text": "It was ok", "author": "Poop", "movieId": "1" }
+    { "id": "2", "text": "I liked it.", "author": "Ryan", "movieId": "1" },
+    {
+      "id": "3",
+      "text": "The greatest kids' picture for adults since \"The Wizard of Oz.\"",
+      "author": "Tom Shales",
+      "movieId": "2"
+    },
+    {
+      "id": "4",
+      "text": "On the basic level of simple entertainment it succeeds as well as any film ever has.",
+      "author": "Steve Biodrowski",
+      "movieId": "2"
+    }
   ]
 }
