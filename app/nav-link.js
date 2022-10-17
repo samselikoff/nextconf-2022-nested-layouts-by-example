@@ -4,11 +4,11 @@ import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 
 export default function NavLink({ href, children }) {
-  let id = useSelectedLayoutSegment();
-  let isActive = href === `/${id}`;
+  let selectedSegment = useSelectedLayoutSegment();
+  let active = href === `/${selectedSegment}`;
 
   return (
-    <Link href={href} className={isActive ? "underline" : ""}>
+    <Link className={active ? "underline" : ""} href={href}>
       {children}
     </Link>
   );

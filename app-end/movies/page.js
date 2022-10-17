@@ -1,3 +1,3 @@
 export default function Page() {
-  return <p>Hello, Next conf!</p>;
+  return <p>Choose a movie.</p>;
 }

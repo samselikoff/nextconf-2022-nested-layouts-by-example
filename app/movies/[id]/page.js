@@ -1,21 +1,13 @@
 import { experimental_use as use } from "react";
 
-async function getCast(movieId) {
-  let res = await fetch(`http://localhost:3001/movies/${movieId}/cast`);
+async function getMovie(id) {
+  let res = await fetch(`http://localhost:3001/movies/${id}`);
 
   return res.json();
 }
 
 export default function Page({ params }) {
-  let cast = use(getCast(params.id));
+  let movie = use(getMovie(params.id));
 
-  return (
-    <div>
-      <ul className="mt-4 list-disc pl-4">
-        {cast.map((castMember) => (
-          <li key={castMember.id}>{castMember.name}</li>
-        ))}
-      </ul>
-    </div>
-  );
+  return <p className="text-2xl">{movie.title}</p>;
 }
