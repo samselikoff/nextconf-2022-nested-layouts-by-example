@@ -222,6 +222,8 @@ export default function Page({ params }) {
 
 now we can see which id we're on.
 
+- Nested layouts recap! Good way to build ui.
+
 ## Step
 
 To show the movie details we need to actually fetch this movie from the server. We know how to fetch data - copy from layout.
@@ -351,3 +353,5 @@ export async function generateStaticParams() {
 Similar to paths but only concerned with the current dynamic segment. So we can fetch our movies and return an array of movie ids that we want to pregenerate. Rebuild, boom.
 
 Beyond scope of talk but there's way more options for configuring these fetch calls, ways to signal to Next how each one should be cached, whether it should be run at build time or revalidated every 10 seconds or via a webhook using ISR, but regardless very exciting how we basically have just one way to do fetch data, using fetch in a RSC, and then we can mix and match these options to get a fast site or real-time data.
+
+- Been making nested layouts for years, great way to build apps

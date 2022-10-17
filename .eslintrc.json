@@ -1,6 +1,7 @@
 {
   "extends": ["eslint:recommended", "next/core-web-vitals"],
   "rules": {
-    "@next/next/no-head-element": "off"
+    "@next/next/no-head-element": "off",
+    "react/no-unescaped-entities": "off"
   }
 }
