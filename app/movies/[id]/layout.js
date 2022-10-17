@@ -18,11 +18,11 @@ export default function Layout({ params, children }) {
       <p className="mt-2">{movie.overview}</p>
 
       <nav className="flex mt-4 border-b space-x-4">
-        <Link href={`/movies/${id}`}>
-          <a className="text-sm py-2">Cast</a>
+        <Link href={`/movies/${id}`} className="text-sm py-2">
+          Cast
         </Link>
-        <Link href={`/movies/${id}/reviews`}>
-          <a className="text-sm py-2">Reviews</a>
+        <Link href={`/movies/${id}/reviews`} className="text-sm py-2">
+          Reviews
         </Link>
       </nav>
 

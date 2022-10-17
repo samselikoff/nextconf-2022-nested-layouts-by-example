@@ -1,3 +1,3 @@
 export default function Page() {
-  return <p>Choose a movie.</p>;
+  return <p>Select a movie!</p>;
 }

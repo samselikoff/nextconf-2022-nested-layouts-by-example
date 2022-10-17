@@ -1,3 +1,7 @@
 export default function Page() {
-  return <p>Hello, Next conf!</p>;
+  return (
+    <div className="p-4">
+      <p className="text-lg">Welcome!</p>
+    </div>
+  );
 }

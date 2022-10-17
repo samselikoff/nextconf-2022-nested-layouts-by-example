@@ -1,3 +1,4 @@
+import "tailwindcss/tailwind.css";
 import { experimental_use as use } from "react";
 import MovieLink from "./movie-link";
 
@@ -7,20 +8,22 @@ async function getMovies() {
   return res.json();
 }
 
-export default function Layout({ children }) {
+export default function RootLayout({ children }) {
   let movies = use(getMovies());
 
   return (
-    <div className="flex">
-      <ul className="pr-10 text-sm text-gray-400 space-y-1">
-        {movies.map((movie) => (
-          <li key={movie.id}>
-            <MovieLink href={`/movies/${movie.id}`}>{movie.title}</MovieLink>
-          </li>
-        ))}
-      </ul>
+    <div className="flex h-full">
+      <nav className="border-r w-1/3">
+        <div className="p-4">
+          {movies.map((movie) => (
+            <div key={movie.id}>
+              <MovieLink movieId={movie.id}>{movie.title}</MovieLink>
+            </div>
+          ))}
+        </div>
+      </nav>
 
-      <div>{children}</div>
+      <main className="w-2/3 p-4">{children}</main>
     </div>
   );
 }

@@ -262,3 +262,5 @@ className={active ? "text-gray-100" : "hover:text-gray-300"}
 Works!
 
 ##
+
+previously data loaded at top flows through. here you get to load the data within each section that needs it.

@@ -3,20 +3,20 @@ import NavLink from "./nav-link";
 
 export default function RootLayout({ children }) {
   return (
-    <html className="antialiased bg-zinc-900 text-zinc-200">
+    <html lang="en" className="text-gray-900">
       <head>
-        <title>Nested layouts by example</title>
+        <title>Next.js</title>
       </head>
 
-      <body>
-        <header className="border-b border-gray-700 p-4 space-x-4">
-          <NavLink className="underline" href="/">
-            Home
-          </NavLink>
-          <NavLink href="/movies">Movies</NavLink>
+      <body className="flex flex-col min-h-screen">
+        <header className="border-b border-gray-300">
+          <div className="p-4 space-x-2">
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/movies">Movies</NavLink>
+          </div>
         </header>
 
-        <main className="p-4">{children}</main>
+        <main className="flex-1">{children}</main>
       </body>
     </html>
   );

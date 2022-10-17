@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 
-export default function MovieLink({ href, children }) {
-  let selectedSegment = useSelectedLayoutSegment();
-  let active = href === `/movies/${selectedSegment}`;
+export default function NavLink({ movieId, children }) {
+  let activeId = useSelectedLayoutSegment();
+  let active = activeId === movieId;
 
   return (
     <Link
-      className={active ? "text-gray-100" : "hover:text-gray-300"}
-      href={href}
+      href={`/movies/${movieId}`}
+      className={active ? "underline" : "text-gray-500 hover:text-gray-900"}
     >
       {children}
     </Link>
