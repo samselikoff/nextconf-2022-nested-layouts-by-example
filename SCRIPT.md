@@ -259,7 +259,21 @@ And now can customize the active state:
 className={active ? "text-gray-100" : "hover:text-gray-300"}
 ```
 
-Works!
+And it works!
+
+## Step
+
+Ok – let's add some more details from our movie!
+
+```
+return (
+  <div>
+    <p className="text-3xl">{movie.title}</p>
+    <p className="mt-2">Year: {movie.year}</p>
+    <p className="mt-2">{movie.description}</p>
+  </div>
+);
+```
 
 ##
 

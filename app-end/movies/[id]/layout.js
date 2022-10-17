@@ -15,7 +15,7 @@ export default function Layout({ params, children }) {
     <div>
       <h1 className="text-3xl">{movie.title}</h1>
       <p className="mt-2">Year: {movie.year}</p>
-      <p className="mt-2">{movie.overview}</p>
+      <p className="mt-2">{movie.description}</p>
 
       <nav className="flex mt-4 border-b space-x-4">
         <Link href={`/movies/${id}`} className="text-sm py-2">

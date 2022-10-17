@@ -9,7 +9,7 @@ export default function MovieLink({ href, children }) {
 
   return (
     <Link
-      className={active ? "text-gray-100" : "hover:text-gray-300"}
+      className={active ? "text-gray-300 underline" : "hover:text-gray-300"}
       href={href}
     >
       {children}

@@ -4,7 +4,7 @@
       "id": "1",
       "title": "Lord of the Rings",
       "year": 2001,
-      "overview": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron."
+      "description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron."
     },
     { "id": "2", "title": "Star Wars", "year": 1985 }
   ],
