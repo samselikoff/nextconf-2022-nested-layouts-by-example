@@ -222,6 +222,8 @@ export default function Page({ params }) {
 
 now we can see which id we're on.
 
+- Nested layouts recap! Good way to build ui.
+
 ## Step
 
 To show the movie details we need to actually fetch this movie from the server. We know how to fetch data - copy from layout.
