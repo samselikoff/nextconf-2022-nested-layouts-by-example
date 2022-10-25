@@ -1,8 +1,7 @@
+import Link from "next/link";
 import { experimental_use as use } from "react";
-import MovieLink from "./movie-link";
 
 async function getMovies() {
-  console.log("fetching movies: ", new Date().toISOString().slice(11, 22));
   let res = await fetch("http://localhost:3001/movies");
 
   return res.json();
@@ -13,10 +12,10 @@ export default function Layout({ children }) {
 
   return (
     <div className="flex">
-      <ul className="pr-10 text-sm text-gray-400 space-y-1 flex-none">
+      <ul className="pr-10 text-sm flex-none">
         {movies.map((movie) => (
           <li key={movie.id}>
-            <MovieLink href={`/movies/${movie.id}`}>{movie.title}</MovieLink>
+            <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
           </li>
         ))}
       </ul>
@@ -24,13 +23,4 @@ export default function Layout({ children }) {
       <div>{children}</div>
     </div>
   );
-}
-
-export async function generateStaticParams() {
-  let res = await fetch("http://localhost:3001/movies");
-  let movies = await res.json();
-
-  return movies.map((movie) => ({
-    id: movie.id,
-  }));
 }
